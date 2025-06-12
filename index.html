@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Com amor, Hudinho 💻❤️</title>
+  <style>
+    body {
+      background: #fff0f6;
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #d6336c;
+    }
+    h2 {
+      color: #a61e4d;
+    }
+    .challenge {
+      background: #ffd6e8;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 8px rgba(214, 51, 108, 0.2);
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #d6336c;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    button {
+      background-color: #d6336c;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a61e4d;
+    }
+    .surprise {
+      margin-top: 15px;
+      background: #ffe6f0;
+      border: 2px dashed #d6336c;
+      border-radius: 10px;
+      padding: 15px;
+    }
+    .progress {
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #a61e4d;
+    }
+    #end-message {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Com amor, Hudinho 💻❤️</h1>
+<div id="challenge-container">
+  <div class="challenge" id="challenge-1">
+    <div class="progress">Pergunta 1 de 4</div>
+    <h2>Desafio 1</h2>
+    <label for="answer1">Qual nosso dorama favorito?</label>
+    <input type="text" id="answer1" placeholder="Resposta aqui..." />
+    <button onclick="checkAnswer(1)">Enviar</button>
+    <div class="surprise" id="surprise1" style="display:none;">
+      <p>💆‍♂️ Você ganhou: <strong>Vale Massagem</strong></p>
+      <a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view?utm_content=DAGqKiFFJX4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h908b3fb35c" target="_blank">Clique aqui para abrir seu presente</a>
+    </div>
+  </div>
+
+  <div class="challenge" id="challenge-2" style="display:none;">
+    <div class="progress">Pergunta 2 de 4</div>
+    <h2>Desafio 2</h2>
+    <label for="answer2">Qual música que marcou o começo do nosso relacionamento?</label>
+    <input type="text" id="answer2" placeholder="Resposta aqui..." />
+    <button onclick="checkAnswer(2)">Enviar</button>
+    <div class="surprise" id="surprise2" style="display:none;">
+      <p>🎵 Você ganhou: <strong>Playlist Especial</strong></p>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1aEldFps5GsY29WYZEGyL0?utm_source=generator" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  </div>
+
+  <div class="challenge" id="challenge-3" style="display:none;">
+    <div class="progress">Pergunta 3 de 4</div>
+    <h2>Desafio 3</h2>
+    <label for="answer3">Qual o primeiro anime que assistimos juntos?</label>
+    <input type="text" id="answer3" placeholder="Resposta aqui..." />
+    <button onclick="checkAnswer(3)">Enviar</button>
+    <div class="surprise" id="surprise3" style="display:none;">
+      <p>☕ Você ganhou: <strong>Vale Café da Manhã na Cama</strong></p>
+      <a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view?utm_content=DAGqKwJp59w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h103c5d3a9ec" target="_blank">Clique aqui para abrir seu presente</a>
+    </div>
+  </div>
+
+  <div class="challenge" id="challenge-4" style="display:none;">
+    <div class="progress">Pergunta 4 de 4</div>
+    <h2>Desafio Final</h2>
+    <label for="answer4">Qual dia começamos a namorar?</label>
+    <input type="text" id="answer4" placeholder="Resposta aqui (DD/MM/AAAA)..." />
+    <button onclick="checkAnswer(4)">Enviar</button>
+    <div class="surprise" id="surprise4" style="display:none;">
+      <p>💌 Último presente: <strong>Carta Especial</strong></p>
+      <iframe src="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view?utm_content=DAGqJ-jnmlE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3c920624cc" width="100%" height="400" style="border:none;"></iframe>
+    </div>
+  </div>
+
+  <div id="end-message" style="display:none;">
+    <h2>Parabéns, Hudinho! 💘</h2>
+    <p>Você desbloqueou todos os presentes do amor. Te amo muito! 💖</p>
+  </div>
+</div>
+
+<script>
+  const answers = {
+    1: 'rainha das lágrimas',
+    2: 'melhor eu ir',
+    3: 'shingeki',
+    4: '13/11/2020'
+  };
+
+  function normalize(text) {
+    return text.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function checkAnswer(num) {
+    const input = document.getElementById(`answer${num}`);
+    const userAnswer = normalize(input.value);
+    const correctAnswer = normalize(answers[num]);
+
+    if (userAnswer === correctAnswer) {
+      document.getElementById(`surprise${num}`).style.display = 'block';
+
+      setTimeout(() => {
+        document.getElementById(`challenge-${num}`).style.display = 'none';
+        if (num < 4) {
+          document.getElementById(`challenge-${num + 1}`).style.display = 'block';
+        } else {
+          document.getElementById('end-message').style.display = 'block';
+        }
+      }, 1500);
+    } else {
+      alert('Resposta incorreta! Tente novamente 💖');
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  // Mostra a primeira pergunta ao carregar
+  document.getElementById('challenge-1').style.display = 'block';
+</script>
+
+</body>
+</html>
