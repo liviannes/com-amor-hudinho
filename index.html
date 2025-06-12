@@ -13,12 +13,9 @@
       margin: 20px auto;
       padding: 20px;
     }
-    h1 {
-      text-align: center;
+    h1, h2 {
       color: #d6336c;
-    }
-    h2 {
-      color: #a61e4d;
+      text-align: center;
     }
     .challenge {
       background: #ffd6e8;
@@ -26,6 +23,11 @@
       padding: 20px;
       margin-bottom: 25px;
       box-shadow: 0 4px 8px rgba(214, 51, 108, 0.2);
+    }
+    .progress {
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #a61e4d;
     }
     label {
       font-weight: bold;
@@ -59,137 +61,108 @@
       border-radius: 10px;
       padding: 15px;
     }
-    .progress {
-      margin-bottom: 10px;
+    .next-button {
+      float: right;
+      margin-top: 10px;
+    }
+    .summary-links a {
+      display: block;
+      margin: 6px 0;
+      color: #d6336c;
       font-weight: bold;
-      color: #a61e4d;
+      text-decoration: none;
     }
     #end-message {
       text-align: center;
       margin-top: 40px;
     }
-    .summary-links {
-      margin-top: 20px;
-      padding: 15px;
-      background: #fff;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-    .summary-links a {
-      display: block;
-      margin: 5px 0;
-      color: #d6336c;
-      font-weight: bold;
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
-
 <h1>Com amor, Hudinho 💻❤️</h1>
-
-<div id="challenge-container">
-  <div class="challenge" id="challenge-1">
-    <div class="progress">Pergunta 1 de 4</div>
-    <h2>Desafio 1</h2>
-    <label for="answer1">Qual nosso dorama favorito?</label>
-    <input type="text" id="answer1" placeholder="Resposta aqui..." />
-    <button onclick="checkAnswer(1)">Enviar</button>
-    <div class="surprise" id="surprise1" style="display:none;">
-      <p>💆‍♂️ Você ganhou: <strong>Vale Massagem</strong></p>
-      <a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view?utm_content=DAGqKiFFJX4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h908b3fb35c" target="_blank" onclick="nextChallenge(2)">Clique aqui para abrir seu presente</a>
-    </div>
-  </div>
-
-  <div class="challenge" id="challenge-2" style="display:none;">
-    <div class="progress">Pergunta 2 de 4</div>
-    <h2>Desafio 2</h2>
-    <label for="answer2">Qual música que marcou o começo do nosso relacionamento?</label>
-    <input type="text" id="answer2" placeholder="Resposta aqui..." />
-    <button onclick="checkAnswer(2)">Enviar</button>
-    <div class="surprise" id="surprise2" style="display:none;">
-      <p>🎵 Você ganhou: <strong>Playlist Especial</strong></p>
-      <a href="https://open.spotify.com/playlist/1aEldFps5GsY29WYZEGyL0?si=ksn9t274QLCYBtyDgtpwtw&pi=ZkbxFeyBSS6Of" target="_blank" onclick="nextChallenge(3)">Clique aqui para ouvir nossa playlist</a>
-    </div>
-  </div>
-
-  <div class="challenge" id="challenge-3" style="display:none;">
-    <div class="progress">Pergunta 3 de 4</div>
-    <h2>Desafio 3</h2>
-    <label for="answer3">Qual o primeiro anime que assistimos juntos?</label>
-    <input type="text" id="answer3" placeholder="Resposta aqui..." />
-    <button onclick="checkAnswer(3)">Enviar</button>
-    <div class="surprise" id="surprise3" style="display:none;">
-      <p>☕ Você ganhou: <strong>Vale Café da Manhã na Cama</strong></p>
-      <a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view?utm_content=DAGqKwJp59w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h103c5d3a9ec" target="_blank" onclick="nextChallenge(4)">Clique aqui para abrir seu presente</a>
-    </div>
-  </div>
-
-  <div class="challenge" id="challenge-4" style="display:none;">
-    <div class="progress">Pergunta 4 de 4</div>
-    <h2>Desafio Final</h2>
-    <label for="answer4">Qual dia começamos a namorar?</label>
-    <input type="text" id="answer4" placeholder="Resposta aqui (DD/MM/AAAA)..." />
-    <button onclick="checkAnswer(4)">Enviar</button>
-    <div class="surprise" id="surprise4" style="display:none;">
-      <p>💌 Último presente: <strong>Carta Especial</strong></p>
-      <a href="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view?utm_content=DAGqJ-jnmlE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3c920624cc" target="_blank" onclick="showEndMessage()">Clique aqui para ler sua carta</a>
-    </div>
-  </div>
-
-  <div id="end-message" style="display:none;">
-    <h2>Eu te amo, Hudinho 💘</h2>
-    <p>Você desbloqueou todos os presentes. Aqui estão eles para acessar sempre que quiser:</p>
-    <div class="summary-links">
-      <a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view?utm_content=DAGqKiFFJX4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h908b3fb35c" target="_blank">💆‍♂️ Vale Massagem</a>
-      <a href="https://open.spotify.com/playlist/1aEldFps5GsY29WYZEGyL0?si=ksn9t274QLCYBtyDgtpwtw&pi=ZkbxFeyBSS6Of" target="_blank">🎵 Playlist Especial</a>
-      <a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view?utm_content=DAGqKwJp59w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h103c5d3a9ec" target="_blank">☕ Vale Café da Manhã</a>
-      <a href="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view?utm_content=DAGqJ-jnmlE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3c920624cc" target="_blank">💌 Carta Especial</a>
-    </div>
+<div id="challenge-container"></div>
+<div id="end-message" style="display:none;">
+  <h2>Eu te amo, Hudinho 💘</h2>
+  <p>Você desbloqueou todos os presentes. Aqui estão eles para acessar quando quiser:</p>
+  <div class="summary-links">
+    <a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view" target="_blank">💆‍♂️ Vale Massagem</a>
+    <a href="https://open.spotify.com/playlist/1aEldFps5GsY29WYZEGyL0" target="_blank">🎵 Playlist Especial</a>
+    <a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view" target="_blank">☕ Vale Café da Manhã</a>
+    <a href="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view" target="_blank">💌 Carta Especial</a>
   </div>
 </div>
-
 <script>
-  const answers = {
-    1: 'rainha das lágrimas',
-    2: 'melhor eu ir',
-    3: 'shingeki',
-    4: '13/11/2020'
-  };
-
-  function normalize(text) {
-    return text.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const challenges = [
+  {
+    question: "Qual nosso dorama favorito?",
+    answer: "rainha das lágrimas",
+    surprise: '<p>💆‍♂️ Você ganhou: <strong>Vale Massagem</strong></p><a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view" target="_blank">Clique aqui para abrir seu presente</a>'
+  },
+  {
+    question: "Qual música que marcou o começo do nosso relacionamento?",
+    answer: "melhor eu ir",
+    surprise: '<p>🎵 Você ganhou: <strong>Playlist Especial</strong></p><a href="https://open.spotify.com/playlist/1aEldFps5GsY29WYZEGyL0" target="_blank">Clique aqui para ouvir nossa playlist</a>'
+  },
+  {
+    question: "Qual o primeiro anime que assistimos juntos?",
+    answer: "shingeki",
+    surprise: '<p>☕ Você ganhou: <strong>Vale Café da Manhã na Cama</strong></p><a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view" target="_blank">Clique aqui para abrir seu presente</a>'
+  },
+  {
+    question: "Qual dia começamos a namorar?",
+    answer: "13/11/2020",
+    surprise: '<p>💌 Último presente: <strong>Carta Especial</strong></p><a href="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view" target="_blank">Clique aqui para ler sua carta</a>'
   }
+];
 
-  function checkAnswer(num) {
-    const input = document.getElementById(`answer${num}`);
-    const userAnswer = normalize(input.value);
-    const correctAnswer = normalize(answers[num]);
+let current = 0;
+const container = document.getElementById('challenge-container');
 
-    if (userAnswer === correctAnswer) {
-      document.getElementById(`surprise${num}`).style.display = 'block';
-    } else {
-      alert('Resposta incorreta! Tente novamente 💖');
-      input.value = '';
-      input.focus();
-    }
+function renderChallenge(index) {
+  const c = challenges[index];
+  container.innerHTML = `
+    <div class="challenge">
+      <div class="progress">Pergunta ${index + 1} de ${challenges.length}</div>
+      <h2>Desafio ${index + 1}</h2>
+      <label for="answer">${c.question}</label>
+      <input type="text" id="answer" placeholder="Resposta aqui..." />
+      <button onclick="checkAnswer(${index})">Enviar</button>
+      <div class="surprise" id="surprise" style="display:none;"></div>
+      <button id="next" class="next-button" style="display:none;" onclick="nextChallenge()">Próxima ➤</button>
+    </div>
+  `;
+}
+
+function normalize(text) {
+  return text.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
+function checkAnswer(index) {
+  const input = document.getElementById('answer');
+  const userAnswer = normalize(input.value);
+  const correctAnswer = normalize(challenges[index].answer);
+  if (userAnswer === correctAnswer) {
+    document.getElementById('surprise').innerHTML = challenges[index].surprise;
+    document.getElementById('surprise').style.display = 'block';
+    document.getElementById('next').style.display = 'inline-block';
+  } else {
+    alert('Resposta incorreta! Tente novamente 💖');
+    input.value = '';
+    input.focus();
   }
+}
 
-  function nextChallenge(nextNum) {
-    document.getElementById(`challenge-${nextNum - 1}`).style.display = 'none';
-    if (nextNum <= 4) {
-      document.getElementById(`challenge-${nextNum}`).style.display = 'block';
-    }
-  }
-
-  function showEndMessage() {
-    document.getElementById(`challenge-4`).style.display = 'none';
+function nextChallenge() {
+  current++;
+  if (current < challenges.length) {
+    renderChallenge(current);
+  } else {
+    container.style.display = 'none';
     document.getElementById('end-message').style.display = 'block';
   }
+}
 
-  // Iniciar com a primeira pergunta
-  document.getElementById('challenge-1').style.display = 'block';
+renderChallenge(current);
 </script>
-
 </body>
 </html>
