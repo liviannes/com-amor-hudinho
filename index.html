@@ -68,11 +68,26 @@
       text-align: center;
       margin-top: 40px;
     }
+    .summary-links {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .summary-links a {
+      display: block;
+      margin: 5px 0;
+      color: #d6336c;
+      font-weight: bold;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
 <h1>Com amor, Hudinho 💻❤️</h1>
+
 <div id="challenge-container">
   <div class="challenge" id="challenge-1">
     <div class="progress">Pergunta 1 de 4</div>
@@ -82,7 +97,7 @@
     <button onclick="checkAnswer(1)">Enviar</button>
     <div class="surprise" id="surprise1" style="display:none;">
       <p>💆‍♂️ Você ganhou: <strong>Vale Massagem</strong></p>
-      <a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view?utm_content=DAGqKiFFJX4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h908b3fb35c" target="_blank">Clique aqui para abrir seu presente</a>
+      <a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view?utm_content=DAGqKiFFJX4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h908b3fb35c" target="_blank" onclick="nextChallenge(2)">Clique aqui para abrir seu presente</a>
     </div>
   </div>
 
@@ -94,7 +109,7 @@
     <button onclick="checkAnswer(2)">Enviar</button>
     <div class="surprise" id="surprise2" style="display:none;">
       <p>🎵 Você ganhou: <strong>Playlist Especial</strong></p>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1aEldFps5GsY29WYZEGyL0?utm_source=generator" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <a href="https://open.spotify.com/playlist/1aEldFps5GsY29WYZEGyL0?si=ksn9t274QLCYBtyDgtpwtw&pi=ZkbxFeyBSS6Of" target="_blank" onclick="nextChallenge(3)">Clique aqui para ouvir nossa playlist</a>
     </div>
   </div>
 
@@ -106,7 +121,7 @@
     <button onclick="checkAnswer(3)">Enviar</button>
     <div class="surprise" id="surprise3" style="display:none;">
       <p>☕ Você ganhou: <strong>Vale Café da Manhã na Cama</strong></p>
-      <a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view?utm_content=DAGqKwJp59w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h103c5d3a9ec" target="_blank">Clique aqui para abrir seu presente</a>
+      <a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view?utm_content=DAGqKwJp59w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h103c5d3a9ec" target="_blank" onclick="nextChallenge(4)">Clique aqui para abrir seu presente</a>
     </div>
   </div>
 
@@ -118,13 +133,19 @@
     <button onclick="checkAnswer(4)">Enviar</button>
     <div class="surprise" id="surprise4" style="display:none;">
       <p>💌 Último presente: <strong>Carta Especial</strong></p>
-      <iframe src="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view?utm_content=DAGqJ-jnmlE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3c920624cc" width="100%" height="400" style="border:none;"></iframe>
+      <a href="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view?utm_content=DAGqJ-jnmlE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3c920624cc" target="_blank" onclick="showEndMessage()">Clique aqui para ler sua carta</a>
     </div>
   </div>
 
   <div id="end-message" style="display:none;">
-    <h2>Parabéns, Hudinho! 💘</h2>
-    <p>Você desbloqueou todos os presentes do amor. Te amo muito! 💖</p>
+    <h2>Eu te amo, Hudinho 💘</h2>
+    <p>Você desbloqueou todos os presentes. Aqui estão eles para acessar sempre que quiser:</p>
+    <div class="summary-links">
+      <a href="https://www.canva.com/design/DAGqKiFFJX4/5xbC4lGgqHtmq7D6c1c2dg/view?utm_content=DAGqKiFFJX4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h908b3fb35c" target="_blank">💆‍♂️ Vale Massagem</a>
+      <a href="https://open.spotify.com/playlist/1aEldFps5GsY29WYZEGyL0?si=ksn9t274QLCYBtyDgtpwtw&pi=ZkbxFeyBSS6Of" target="_blank">🎵 Playlist Especial</a>
+      <a href="https://www.canva.com/design/DAGqKwJp59w/kQF0tQIAS9vuEQubZ2uQ3w/view?utm_content=DAGqKwJp59w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h103c5d3a9ec" target="_blank">☕ Vale Café da Manhã</a>
+      <a href="https://www.canva.com/design/DAGqJ-jnmlE/gdxAaYF3WFmmMt_CGH6tIA/view?utm_content=DAGqJ-jnmlE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3c920624cc" target="_blank">💌 Carta Especial</a>
+    </div>
   </div>
 </div>
 
@@ -147,15 +168,6 @@
 
     if (userAnswer === correctAnswer) {
       document.getElementById(`surprise${num}`).style.display = 'block';
-
-      setTimeout(() => {
-        document.getElementById(`challenge-${num}`).style.display = 'none';
-        if (num < 4) {
-          document.getElementById(`challenge-${num + 1}`).style.display = 'block';
-        } else {
-          document.getElementById('end-message').style.display = 'block';
-        }
-      }, 1500);
     } else {
       alert('Resposta incorreta! Tente novamente 💖');
       input.value = '';
@@ -163,7 +175,19 @@
     }
   }
 
-  // Mostra a primeira pergunta ao carregar
+  function nextChallenge(nextNum) {
+    document.getElementById(`challenge-${nextNum - 1}`).style.display = 'none';
+    if (nextNum <= 4) {
+      document.getElementById(`challenge-${nextNum}`).style.display = 'block';
+    }
+  }
+
+  function showEndMessage() {
+    document.getElementById(`challenge-4`).style.display = 'none';
+    document.getElementById('end-message').style.display = 'block';
+  }
+
+  // Iniciar com a primeira pergunta
   document.getElementById('challenge-1').style.display = 'block';
 </script>
 
